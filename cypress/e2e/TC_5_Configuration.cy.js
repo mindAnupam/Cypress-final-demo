@@ -3,7 +3,6 @@
 import LoginPage from "../pages/loginPage";
 import DashboardPage from "../pages/dashboardPage";
 import ConfigPage from "../pages/configPage";
-const fileName = "sample.jpg";
 
 describe("Verify Configuration tab functionality", () => {
   beforeEach(() => {
@@ -48,7 +47,7 @@ describe("Verify Configuration tab functionality", () => {
     // Verify that remove button is now visible
     cy.get(ConfigPage.removeButton).eq(0).should("be.visible");
 
-    cy.get(ConfigPage.euCookieLawCheckbox).check();
+    cy.get(ConfigPage.euCookieLawCheckbox).eq(0).check();
     cy.get(ConfigPage.systemEmailCheckbox).uncheck();
 
     cy.get(ConfigPage.searchPlusIcon).scrollIntoView();

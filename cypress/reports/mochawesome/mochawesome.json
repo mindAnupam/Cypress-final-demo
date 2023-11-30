@@ -2,14 +2,14 @@
   "stats": {
     "suites": 1,
     "tests": 1,
-    "passes": 1,
+    "passes": 0,
     "pending": 0,
-    "failures": 0,
-    "start": "2023-11-23T10:40:18.618Z",
-    "end": "2023-11-23T10:40:32.844Z",
-    "duration": 14226,
+    "failures": 1,
+    "start": "2023-11-30T07:34:46.373Z",
+    "end": "2023-11-30T07:36:27.128Z",
+    "duration": 100755,
     "testsRegistered": 1,
-    "passPercent": 100,
+    "passPercent": 0,
     "pendingPercent": 0,
     "other": 0,
     "hasOther": false,
@@ -18,7 +18,7 @@
   },
   "results": [
     {
-      "uuid": "403e76f2-1202-4fb2-a4cd-90ecc3dbc33b",
+      "uuid": "9edfd990-ed62-43fb-9d03-34c4c09b8d86",
       "title": "",
       "fullFile": "cypress\\e2e\\TC_5_Configuration.cy.js",
       "file": "cypress\\e2e\\TC_5_Configuration.cy.js",
@@ -27,7 +27,7 @@
       "tests": [],
       "suites": [
         {
-          "uuid": "eb836b77-9303-40c7-87fe-11dff610bf62",
+          "uuid": "b1d22530-d917-4eea-ba52-163e2822d474",
           "title": "Verify Configuration tab functionality",
           "fullFile": "",
           "file": "",
@@ -38,29 +38,33 @@
               "title": "Verify setting tab",
               "fullTitle": "Verify Configuration tab functionality Verify setting tab",
               "timedOut": null,
-              "duration": 11831,
-              "state": "passed",
-              "speed": "slow",
-              "pass": true,
-              "fail": false,
+              "duration": 46899,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
               "pending": false,
               "context": null,
               "code": "_dashboardPage.default.selectSubMenu(\"Settings\");\n_dashboardPage.default.selectSubMenu(\"General settings\");\ncy.get(_configPage.default.onOffSwitchInner).invoke(\"css\", \"margin-left\").then(marginLeft => {\n  const absoluteMarginLeft = Math.abs(parseInt(marginLeft, 10));\n  if (absoluteMarginLeft > 10) {\n    cy.get(_dashboardPage.default.onOffSwitch).click();\n  }\n});\n// Assert that default logo is shown\ncy.get(_configPage.default.uploadedImage).eq(0).should(\"have.attr\", \"src\", \"https://admin-demo.nopcommerce.com/images/thumbs/default-image_100.png\");\n// Upload Logo\ncy.get(_configPage.default.fileInput).eq(0).selectFile(\"cypress/fixtures/sample-image.jpg\", {\n  force: true\n});\n// Assert that default logo is not shown\ncy.get(_configPage.default.uploadedImage).eq(0).should(\"have.attr\", \"src\").and(\"include\", \"sample-image\");\n// Verify that remove button is now visible\ncy.get(_configPage.default.removeButton).eq(0).should(\"be.visible\");\ncy.get(_configPage.default.euCookieLawCheckbox).check();\ncy.get(_configPage.default.systemEmailCheckbox).uncheck();\ncy.get(_configPage.default.searchPlusIcon).scrollIntoView();\ncy.get(_configPage.default.wwwRequirementDropdown).select(\"Pages should have WWW prefix\");",
-              "err": {},
-              "uuid": "801761c8-25f5-4914-b2d0-b45791f017bc",
-              "parentUUID": "eb836b77-9303-40c7-87fe-11dff610bf62",
+              "err": {
+                "message": "CypressError: Timed out retrying after 40050ms: `cy.check()` failed because this element is `disabled`:\n\n`<input class=\"check-box\" data-val=\"true\" data-val-required=\"The Display EU cookie law warning field is required.\" id=\"StoreInformationSettings_DisplayEuCookieLawWarning\" name=\"StoreInformationSettings.DisplayEuCookieLawWarning\" type=\"checkbox\" value=\"true\" disabled=\"disabled\">`\n\nFix this problem, or use `{force: true}` to disable error checking.\n\nhttps://on.cypress.io/element-cannot-be-interacted-with",
+                "estack": "CypressError: Timed out retrying after 40050ms: `cy.check()` failed because this element is `disabled`:\n\n`<input class=\"check-box\" data-val=\"true\" data-val-required=\"The Display EU cookie law warning field is required.\" id=\"StoreInformationSettings_DisplayEuCookieLawWarning\" name=\"StoreInformationSettings.DisplayEuCookieLawWarning\" type=\"checkbox\" value=\"true\" disabled=\"disabled\">`\n\nFix this problem, or use `{force: true}` to disable error checking.\n\nhttps://on.cypress.io/element-cannot-be-interacted-with\n    at Object.isNotDisabled (https://admin-demo.nopcommerce.com/__cypress/runner/cypress_runner.js:145288:58)\n    at runAllChecks (https://admin-demo.nopcommerce.com/__cypress/runner/cypress_runner.js:112232:26)\n    at retryActionability (https://admin-demo.nopcommerce.com/__cypress/runner/cypress_runner.js:112321:16)\n    at tryCatcher (https://admin-demo.nopcommerce.com/__cypress/runner/cypress_runner.js:1807:23)\n    at Promise.attempt.Promise.try (https://admin-demo.nopcommerce.com/__cypress/runner/cypress_runner.js:4315:29)\n    at whenStable (https://admin-demo.nopcommerce.com/__cypress/runner/cypress_runner.js:144144:68)\n    at <unknown> (https://admin-demo.nopcommerce.com/__cypress/runner/cypress_runner.js:144085:14)\n    at tryCatcher (https://admin-demo.nopcommerce.com/__cypress/runner/cypress_runner.js:1807:23)\n    at Promise._settlePromiseFromHandler (https://admin-demo.nopcommerce.com/__cypress/runner/cypress_runner.js:1519:31)\n    at Promise._settlePromise (https://admin-demo.nopcommerce.com/__cypress/runner/cypress_runner.js:1576:18)\n    at Promise._settlePromise0 (https://admin-demo.nopcommerce.com/__cypress/runner/cypress_runner.js:1621:10)\n    at Promise._settlePromises (https://admin-demo.nopcommerce.com/__cypress/runner/cypress_runner.js:1701:18)\n    at Promise._fulfill (https://admin-demo.nopcommerce.com/__cypress/runner/cypress_runner.js:1645:18)\n    at <unknown> (https://admin-demo.nopcommerce.com/__cypress/runner/cypress_runner.js:5450:46)\nFrom Your Spec Code:\n    at Context.eval (webpack://commerce/./cypress/e2e/TC_5_Configuration.cy.js:50:43)",
+                "diff": null
+              },
+              "uuid": "a9566f14-12d1-4163-83f0-ca943727b7e8",
+              "parentUUID": "b1d22530-d917-4eea-ba52-163e2822d474",
               "isHook": false,
               "skipped": false
             }
           ],
           "suites": [],
-          "passes": [
-            "801761c8-25f5-4914-b2d0-b45791f017bc"
+          "passes": [],
+          "failures": [
+            "a9566f14-12d1-4163-83f0-ca943727b7e8"
           ],
-          "failures": [],
           "pending": [],
           "skipped": [],
-          "duration": 11831,
+          "duration": 46899,
           "root": false,
           "rootEmpty": false,
           "_timeout": 2000
