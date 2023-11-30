@@ -1,0 +1,18 @@
+{
+  "systemInfo": [
+    {"label": "nopCommerce version", "value": "4.60.0"},
+    {"label": "Operating system", "value": "Microsoft Windows NT 10.0.17763.0"},
+    {"label": "ASP.NET info", "value": ".NET 7.0.0"},
+    {"label": "Is full trust level", "value": "Yes"}
+  ],
+  "expectedTexts": [
+    "Specified store URL matches this store URL",
+    "Primary exchange rate currency is set",
+    "Primary store currency is set",
+    "Default weight is set",
+    "Default dimension is set",
+    "Payment methods are OK",
+    "All directory permissions are OK",
+    "All file permissions are OK"
+  ]
+}
